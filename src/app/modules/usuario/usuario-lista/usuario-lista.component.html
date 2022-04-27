@@ -1,0 +1,52 @@
+<div class="container-fluid w-conteiner mt-5" style="display: flex; align-items: center; justify-content: center; width: 100em; height: 40em;">
+      <div class="container-fluid">
+
+        <div class="page-header">
+          <div class="col-lg-6">
+              <h3>Listagem de Usuários</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+              <div class="table-responsive">
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Login</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let usuario of usuarios; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{usuario.id}}</td>
+                    <td>{{usuario.nome}}</td>
+                    <td>{{usuario.login}}</td>
+                  </tr>
+                </tbody>
+              </table>
+                <hr>
+              </div>
+
+                <div class="row">
+
+                <div class="col-sm-6">
+                  <ngb-pagination
+                    class="float-right"
+                    [(page)]="seletor.pagina"
+                    [pageSize]="seletor.limite"
+                    [collectionSize]="totalUsuarios"
+                    (pageChange)="pesquisar()"></ngb-pagination>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+</div>

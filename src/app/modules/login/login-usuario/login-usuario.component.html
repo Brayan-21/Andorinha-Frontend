@@ -1,0 +1,27 @@
+<div class="container-fluid w-conteiner mt-5" style="display: flex; width: 100em; height: 40em;justify-content: flex-start;  flex-direction: row; align-items: center;">
+    <div class="container estiloContainer">
+        <div class="container">
+            <h2 style="text-align: center;">Faça seu login</h2>
+        </div>
+
+        <form class="container mt-1" [formGroup]="formsGroup" (ngSubmit)="loginProces()">
+            <div class="mb-3">
+            <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail2" [(ngModel)]="login" placeholder="email@exemplo.com" formControlName="usuario">
+            </div>
+            <div class="mb-3">
+            <label for="exampleDropdownFormPassword2" class="form-label" >Senha</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Senha" formControlName="senha">
+            </div>
+            <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                <label class="form-check-label" for="dropdownCheck2">
+                Lembre-se de min
+                </label>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+    </div>
+</div>

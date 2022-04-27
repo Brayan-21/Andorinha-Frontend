@@ -1,0 +1,63 @@
+<div class="container-fluid w-conteiner mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-novo-tweet">
+                    <h5>Escreva um tweet</h5>
+                </div>
+                <div class="card-body bg-novo-tweet">
+                    <form>    
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="textoNovoTweet" 
+                                            placeholder="O que está acontecendo?" [(ngModel)]="conteudo">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-block btn-primary mr-1 w" (click)="tweetar()">Tweetar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Recentes</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 ml-2 mb-3" *ngFor="let tweet of tweets">
+                <div class="card tweet-card">
+                    <div class="card-header tweet-header">
+                        <div>
+                            <span class="tweet-name">{{tweet.usuario.nome}}</span>
+                            <span class="message-data-time pull-right f-14">{{tweet.data | date: 'dd/MM/yyyy HH:mm'}}</span>
+                        </div>
+                    </div>
+                    <div class="card-body  p-l-0">
+                        <p class="mb-0"> {{tweet.conteudo}} </p>
+                    </div>
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary mr-1" (click)="darLike(tweet)">
+                            <span>{{tweet.likes?.length}}</span>
+                            <i class="fa fa-thumbs-up pl-1"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary mr-1" (click)="darDeslike(tweet)">
+                            <span>{{tweet.deslikes?.length}}</span>
+                            <i class="fa fa-thumbs-down pl-1"></i>
+                        </button>
+                        <button type="button" (click)="verComentarios(tweet.id)" class="btn btn-primary mr-1" id="btnComment"> 
+                            <i class="fa fa-comment-o"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

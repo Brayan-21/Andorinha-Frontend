@@ -1,0 +1,21 @@
+<div class="container-fluid w-conteiner mt-5" style="display: flex; align-items: center; justify-content: center; width: 100em; height: 40em;">
+    <form class="w-50">
+
+      <h2>Cadastrar novo usuário</h2>
+
+      <div class="form-group">
+        <label>Nome:</label>
+        <input type="text" name="nome" [(ngModel)]="usuario.nome" class="form-control" placeholder="Informe o nome completo">
+      </div>
+      <div class="form-group">
+        <label>Login:</label>
+        <input type="text"  name="idade" [(ngModel)]="usuario.login" class="form-control" placeholder="Informe um login">
+      </div>
+      <div class="form-group">
+        <label>Senha:</label>
+        <input type="password"  name="idade" [(ngModel)]="usuario.senha" class="form-control" placeholder="Informe uma senha">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="inserirUsuario()">Salvar</button>
+    </form>
+    <!-- <pre>{{usuario | json}}</pre> -->
+</div>
